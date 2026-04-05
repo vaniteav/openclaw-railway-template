@@ -1,16 +1,20 @@
 FROM node:22-bookworm
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    ca-certificates \
-    curl \
-    git \
-    gosu \
-    procps \
-    python3 \
-    build-essential \
-    zip \
-  && rm -rf /var/lib/apt/lists/*
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+ ca-certificates \
+ curl \
+ git \
+ gosu \
+ procps \
+ python3 \
+ build-essential \
+ chromium \
+ chromium-driver \
+ fonts-liberation \
+ libgbm1 \
+ zip \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openclaw@2026.4.2 clawhub@latest
 
