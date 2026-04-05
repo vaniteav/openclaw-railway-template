@@ -1,5 +1,7 @@
 FROM node:22-bookworm
 
+# Updated: model set to anthropic/claude-haiku-4-5
+
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
  ca-certificates \
